@@ -37,62 +37,7 @@
 		$VNetName 			- Network Name
 		$VNetResourceGroupName 		- Resource Group where network resources live.  May be different than the other resources 
 
-	A connection is also required to Azure Resource Manager.  Install Azure PowerShell, authenticate and connect to your subscription.  
-	Some sample commands from the Azure documentation: 
-
-	# To make sure the Azure PowerShell module is available after you install
-	Get-Module –ListAvailable 
-
-	# To log in to Azure Resource Manager
-	Connect-AzAccount
-
-	# You can also use a specific Tenant if you would like a faster log in experience
-	# Connect-AzAccount -TenantId xxxx
-
-	# To view all subscriptions for your account
-	Get-AzSubscription
-
-	# To select a default subscription for your current session
-	Get-AzSubscription –SubscriptionName "your sub" | Select-AzSubscription
-
-	# View your current Azure PowerShell session context
-	# This session state is only applicable to the current session and will not affect other sessions
-	Get-AzContext
-
-	# To select the default storage context for your current session
-	Set-AzCurrentStorageAccount –ResourceGroupName "your resource group" –StorageAccountName "your storage account name"
-
-	# View your current Azure PowerShell session context
-	# Note: the CurrentStorageAccount is now set in your session context
-	Get-AzContext
-
-	# To list all of the blobs in all of your containers in all of your accounts
-	Get-AzStorageAccount | Get-AzStorageContainer | Get-AzStorageBlob
-
-
-
-
 	
-
-
-.ASSUMPTIONS
-	Script is being executed with sufficient permissions to access the resources targeted.
-	The necessary resources are available and are available to the AZ cmdlets
-	Thus you have the correct version of PowerShell and .NET installed
-	Correct version of Azure AZ is installed 
-	You can live with the Write-Host cmdlets :) 
-	You can add your error handling if you need it
-	You can truffle through the Azure Portal to gather up all the bits of information such as VHD path, subnet name, availbility group and all that good stuff 
-
-	You will not try and use the sample resources and references below.  They were changed to protect the innocent.
-	
-	You are using Availability Sets.  If not, remove that section of the sample code.  
-
-	All of the other customisations that are required will need to be performed.  Please don't overlook things like:
-		Assign Network Security Groups
-		Static IP
-		Additional security elements such as Azure Security Center
-		Create Inbound NAT rules or update firewall rules
 
 .VERSION
   
